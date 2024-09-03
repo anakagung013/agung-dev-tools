@@ -77,7 +77,7 @@ const StandardCalculator = () => {
     return () => {
       window.removeEventListener('keydown', handleKeyPress);
     };
-  }, [input, previousResult]);
+  }, [input, previousResult, handleCalculate]);
   
 
   return (
