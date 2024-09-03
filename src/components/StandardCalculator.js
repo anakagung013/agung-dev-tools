@@ -3,6 +3,7 @@ import { Box, Typography, Button, TextField, Grid, useMediaQuery } from '@mui/ma
 import { useTheme } from '@mui/material/styles';
 import { evaluate, factorial, exp, pi } from 'mathjs';
 
+
 const StandardCalculator = () => {
   const [input, setInput] = useState('');
   const [output, setOutput] = useState('');
@@ -57,7 +58,7 @@ const StandardCalculator = () => {
   useEffect(() => {
     const handleKeyPress = (event) => {
       const { key } = event;
-
+  
       if (['+', '-', '*', '/', '%'].includes(key)) {
         handleButtonClick(key);
       } else if (key >= '0' && key <= '9') {
@@ -70,13 +71,14 @@ const StandardCalculator = () => {
         handleClear();
       }
     };
-
+  
     window.addEventListener('keydown', handleKeyPress);
-
+  
     return () => {
       window.removeEventListener('keydown', handleKeyPress);
     };
-  }, [input, previousResult]);
+  }, [input, previousResult, handleButtonClick, handleCalculate, handleClearEntry, handleClear]);
+  
 
   return (
     <Box
