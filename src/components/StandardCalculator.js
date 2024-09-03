@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Typography, Button, TextField, Grid, useMediaQuery } from '@mui/material';
+import { Box, Typography, Button, TextField, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { evaluate, factorial, exp, pi } from 'mathjs';
 
@@ -77,7 +77,7 @@ const StandardCalculator = () => {
     return () => {
       window.removeEventListener('keydown', handleKeyPress);
     };
-  }, [input, previousResult, handleButtonClick, handleCalculate, handleClearEntry, handleClear]);
+  }, [input, previousResult]);
   
 
   return (
